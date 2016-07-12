@@ -4,10 +4,6 @@ angular.module('exampleApp', [])
     
     app.display = false;
     
-    app.dynamicMessage = function() {
-      return Math.random();
-    };
-    
     app.handleClick = function(message) {
       app.display = message === 'please';
       app.submittedMessage = message;
