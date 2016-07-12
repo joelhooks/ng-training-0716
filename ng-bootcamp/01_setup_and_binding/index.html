@@ -1,23 +1,26 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en" ng-app>
 <head>
   <meta charset="UTF-8">
-  <title>Angular Training</title>
+  <title>Angular Training {{1 + 1}}</title>
+  <script src="../vendor/angular/angular.js"></script>
 </head>
-<body>
+<body >
 
-<label >First:
-  <input type="text" >
-</label>
-<label>Last:
-  <input type="text" >
-</label>
+  <h1> {{ "Joel " + "wuz " + "here!" }} </h1>
 
-<div>
-  <h1>
-    My name is <strong>FIRST</strong> LAST
-  </h1>
-</div>
+  <label >First:
+    <input type="text" ng-model="firstName" >
+  </label>
+  <label>Last:
+    <input type="text" ng-model="lastName">
+  </label>
+
+  <div >
+    <h1>
+      My name is <strong>{{ firstName }}</strong> {{ lastName }}
+    </h1>
+  </div>
 
 </body>
 </html>
