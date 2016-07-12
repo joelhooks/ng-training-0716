@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+
+<div ng-controller="AppCtrl as app">
+  <input type="text" ng-model="app.message">
+  <button ng-click="app.handleClick(app.message)">Submit</button>
+  <h1>{{ app.submittedMessage }}</h1>
+
+  <div ng-if="app.displayDynamicMessage()">{{ app.dynamicMessage() }}</div>
+  <div ng-hide="true">Thank You</div>
+</div>
+
+</body>
+</html>
