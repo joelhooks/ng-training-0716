@@ -4,5 +4,16 @@ angular.module('exampleApp', [])
 
     app.message = "some message: ";
   })
-  
+  .directive('headline', function() {
+    return {
+      restrict: 'E',
+      template: '<h1>This is the headline!</h1>'
+    }; // Directive Definition Object or DDO
+  })
+  .directive('bigHeadline', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'big-headline.html'
+    }; // Directive Definition Object or DDO
+  })
 ;
