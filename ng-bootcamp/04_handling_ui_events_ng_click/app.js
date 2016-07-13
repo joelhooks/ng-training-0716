@@ -3,7 +3,7 @@ angular.module('exampleApp', [])
     var app = this;
     
     app.dynamicMessage = function() {
-      return Math.random();
+      return Math.random();  //this is a bad idea, breaks Angular
     };
     
     app.handleClick = function(message) {

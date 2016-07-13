@@ -11,8 +11,10 @@
 <div>
   <input type="text" ng-model="app.message">
   <button ng-click="app.handleClick(app.message)">Submit</button>
-  <h1>{{ app.submittedMessage }}</h1>
+  <h1 >{{ app.submittedMessage }}</h1>
+  <h1 ng-if="app.display">{{ app.submittedMessage }}</h1>
   <div ng-hide="app.display">Thank You</div>
+  <div ng-show="app.display">Thank You</div>
 </div>
 
 </body>
