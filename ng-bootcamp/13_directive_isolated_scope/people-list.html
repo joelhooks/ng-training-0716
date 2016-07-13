@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="person in people">
+    <td ng-click="action({text:person.name})">{{person.name}}</td>
+    <td>{{person.title}}</td>
+  </tr>
+  </tbody>
+</table>

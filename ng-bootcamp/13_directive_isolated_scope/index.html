@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <link rel="stylesheet" href="../vendor/bootstrap-css/css/bootstrap.css">
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+
+</head>
+<body ng-controller="AppCtrl as app">
+
+<people-list people="app.people" action="app.sayHello(text)"></people-list>
+<people-list people="app.people2" action="app.sayGoodbye(text)"></people-list>
+
+<random-number message="this is the message"></random-number>
+<random-number message="{{app.message}}"></random-number>
+<random-number message="123abc"></random-number>
+<random-number message="zyc987"></random-number>
+
+
+</body>
+</html>
