@@ -1,17 +1,25 @@
-angular.module('guess-it', [])
-  .controller('GameCtrl', function() {
+angular.module('guessingGame', [])
+  .controller('GameCtrl', function GameCtrl() {
     var game = this,
-      answer = Math.floor(Math.random() * 1000) + 1; // 1-1000
+      answer = Math.floor(Math.random() * 1000);
 
-    game.numGuesses = 0;
+    game.guessCount = 0;
     
-    // is the logic in the HTML OK? Should we move it here?!
-
-    game.handleUserGuess = function(userGuess) {
-      game.currentGuess = parseInt(userGuess, 10);
-      game.delta = game.currentGuess - answer;
-      game.numGuesses++;
-      game.guess = '';
+    game.calculateDelta = function() {
+      game.correctAnswer = guess === answer;
+      game.tooHigh = guess > answer;
+      game.tooLow = guess < answer;
+    };
+    
+    game.reset = function() {
+      game.userGuess = '';
+    };
+    
+    game.submitGuess = function(guess, event) {
+      console.log(event)
+      guess = parseInt(guess, 10);
+      game.currentGuess = guess;
+      game.guessCount++;
     }
   })
 ;
