@@ -4,15 +4,17 @@ angular.module('example.user-list', [
   .config(function($stateProvider) {
     $stateProvider
       .state('userList', {
-        url: '',
+        url: '/users',
         templateUrl: 'user-list/user-list.tpl.html',
         controller: 'UserListCtrl as userList'
       })
   })
 
-  .controller('UserListCtrl', function UserListCtrl() {
+  .controller('UserListCtrl', function UserListCtrl($http) {
     var userList = this;
 
-    console.log('good job little buddy!!!! 👊');
+    $http.get('https://api.github.com/users').then(function (results) {
+      userList.users = results.data;
+    });
   })
 ;
