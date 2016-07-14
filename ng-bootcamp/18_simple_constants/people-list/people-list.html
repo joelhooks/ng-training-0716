@@ -1,0 +1,27 @@
+first: <input type="text"
+              ng-model="peopleList.filterText.firstName"
+              ng-model-options="peopleList.inputOptions">
+last: <input type="text" ng-model="peopleList.filterText.lastName" ng-model-options="peopleList.inputOptions">
+company: <input type="text" ng-model="peopleList.filterText.company" ng-model-options="peopleList.inputOptions">
+<table class="table">
+  <thead>
+  <tr>
+    <th>Photo</th>
+    <th ng-click="peopleList.setSortField('firstName')">First Name</th>
+    <th ng-click="peopleList.setSortField('lastName')">Last Name</th>
+    <th ng-click="peopleList.setSortField('company')">Company</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="person in peopleList.people | filter: peopleList.filterText | orderBy: peopleList.sortField">
+    <td><img src="{{person.picture}}" alt=""></td>
+    <td>{{person.firstName}}</td>
+    <td>{{person.lastName}}</td>
+    <td>{{person.company}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.phone}}</td>
+  </tr>
+  </tbody>
+</table>
