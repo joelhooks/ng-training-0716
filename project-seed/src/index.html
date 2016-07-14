@@ -8,10 +8,14 @@
   <!-- endinject -->
 
 </head>
-<body>
+<body ng-controller="AppCtrl as app">
 
 <div class="container">
   <div ui-view></div>
+
+  <ul>
+    <li ng-repeat="user in app.users">{{user.login}}</li>
+  </ul>
 </div>
 
 <!-- inject:js -->
