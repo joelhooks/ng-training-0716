@@ -4,7 +4,7 @@ angular.module('example.user-detail', [
   .config(function($stateProvider) {
     $stateProvider
       .state('userDetail', {
-        url: '/users/:username',
+        url: '/flowers/:username',
         templateUrl: 'user-detail/user-detail.tpl.html',
         controller: 'UserDetailCtrl as userDetail'
       });
