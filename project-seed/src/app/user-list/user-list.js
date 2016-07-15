@@ -1,5 +1,6 @@
 angular.module('example.user-list', [
-    'ui.router'
+    'ui.router',
+    'example.services.user'
 ])
   .config(function($stateProvider) {
     $stateProvider
