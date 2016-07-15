@@ -7,12 +7,14 @@ angular.module('example.user-detail', [
         url: '/users/:username',
         templateUrl: 'user-detail/user-detail.tpl.html',
         controller: 'UserDetailCtrl as userDetail'
-      })
+      });
   })
 
-  .controller('UserDetailCtrl', function UserDetailCtrl() {
+  .controller('UserDetailCtrl', function UserDetailCtrl(userService, $stateParams) {
     var userDetail = this;
 
-    console.log('It is alive!!! 💣');
+    userService.getUser($stateParams.username).then(function(user) {
+      userDetail.user = user;
+    });
   })
 ;
