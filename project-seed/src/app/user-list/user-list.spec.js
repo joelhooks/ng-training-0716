@@ -20,9 +20,15 @@ describe('UserListCtrl', function() {
     expect(userService.getUsersWasCalled).toBe(true);
   });
 
+  it("should set the users property when promise is successful", function () {
+
+    expect(userListCtrl.users).toBeDefined();
+  });
+
   function createUserServiceMock() {
     var fakePromise = {
-      then: function () {
+      then: function (callback) {
+        callback([]);
       }
     };
 

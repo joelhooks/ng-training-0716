@@ -1,4 +1,10 @@
 <a ui-sref="userList"><- User List</a>
 <h1>{{userDetail.user.name}}</h1>
 
-<img ng-src="{{userDetail.user.avatar_url}}" alt="">
+<img ng-src="{{userDetail.user.avatar_url}}" class="avatar">
+
+<ul>
+  <li><a ui-sref="userDetail.repos">Repositories</a></li>
+</ul>
+
+<div ui-view></div>

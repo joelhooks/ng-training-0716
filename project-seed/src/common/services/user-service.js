@@ -1,19 +1,23 @@
-angular.module('example.services.user', [
-    "project-seed.config.constants"
-])
+angular.module('example.services.user', [])
   .service('userService', function UserService($http, baseApiUrl) {
     var userService = this;
 
-    userService.getUser = function(username) {
-      return $http.get(baseApiUrl + '/users/' + username).then(function(results) {
+    function makeHttpCall(url) {
+      return $http.get(url).then(function (results) {
         return results.data;
       })
+    }
+
+    userService.getUserRepos = function(username) {
+      return makeHttpCall(baseApiUrl + '/users/' + username + '/repos')
+    };
+
+    userService.getUser = function(username) {
+      return makeHttpCall(baseApiUrl + '/users/' + username)
     };
 
     userService.getUsers = function() {
-      return $http.get(baseApiUrl + '/users').then(function (results) {
-        return results.data;
-      });
+      return makeHttpCall(baseApiUrl + '/users')
     }
   })
 ;

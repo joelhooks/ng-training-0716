@@ -1,10 +1,11 @@
 angular.module('example.user-detail', [
-  'ui.router'
+  'ui.router',
+  'example.user-repos'
 ])
   .config(function($stateProvider) {
     $stateProvider
       .state('userDetail', {
-        url: '/flowers/:username',
+        url: '/users/:username',
         templateUrl: 'user-detail/user-detail.tpl.html',
         controller: 'UserDetailCtrl as userDetail'
       });
